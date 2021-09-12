@@ -1,0 +1,59 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>АНКЕТА</title>
+<style>
+header {
+            margin: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: #87CE5E;
+        }
+h1 {
+  color: #000090;
+  font-size: 200%;
+  font-family: Arial;
+  text-align: center;
+}
+.brd {
+    border: 4px double black; 
+    background: #CCCCFF; 
+    padding: 10px; 
+   }
+</style>
+</head>
+<body>
+
+<div class="brd">
+
+<header><h1 align="center">Просто интересный опрос</h1></header>
+<legend><p align="center">Какие-то интересные вопросики (может быть)</p></legend>
+<form>
+<fieldset>
+Имя: <input type = "text" name = "firstname" value = ""> <br>
+Фамилия: <input type = "text" name = "lastname" value = ""> <br>
+Почта: <input type = "email" name = "em" value = ""> <br>
+Мужчина <input type = "radio" name = "sex" value = "male" checked>
+Женщина <input type = "radio" name = "sex" value = "female"> <br>
+<p>Кошки или собаки?<select size="1" >
+    <option selected disabled>Выберите</option>
+    <option value="Кошки">Кошки</option>
+    <option value="Собаки">Собаки</option>
+   </select></p>
+Пицца или роллы?
+<input type="checkbox"> <label>Пицца</label>
+<input type="checkbox" id="cb2"> <label for="cb2">Роллы</label>
+<input type="checkbox" id="cb3"> <label for="cb3">Ничего из выше перечисленного</label>
+<br>
+Коментарий автору: <textarea rows="5" cols="10" name="text"></textarea>
+<br>
+На сколько вопросов ответили? <input type = "number" name = "num" value = ""> <br>
+<input type = "submit" name = "submit" value = "Отправить">
+</fieldset>
+</form>
+
+</div>
+ </body>
+</html>
+
