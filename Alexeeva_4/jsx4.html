@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello React</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+</head>
+<body>
+
+ 
+
+<script type="text/babel">
+    ReactDOM.render(
+        <h1>Hello React</h1>,
+        document.getElementById("app")
+    )
+    
+    function Hello() {
+        return <h1>Привет</h1>;
+    }
+
+    ReactDOM.render(
+        <div style={{color:'blue', fontFamily: 'Verdana'}}><Hello /></div>,
+        document.getElementById("container1")
+    )
+
+
+    var Hello1 =() => {
+        return (<h2>Привет, еще раз</h2>);
+    }
+    ReactDOM.render(
+        <div style={{color:'green', fontFamily: 'Verdana'}}><Hello1 /></div>,
+            document.getElementById("container2")
+      )
+
+    class Hello3 extends React.Component {
+        render() {
+         return <h4>Привет, незнакомец</h4>;
+    }
+    }
+    ReactDOM.render(
+        <div style={{color:'gold', fontFamily: 'Verdana'}}><Hello3 /></div>,
+            document.getElementById("container3")
+      )
+    
+      function Welcome(props) {
+      return <h1>Hello, {props.name}</h1>;
+    }
+
+    ReactDOM.render(
+        <div style={{color:'navy', fontFamily: 'Verdana'}}>
+            <Welcome name="someone" />
+            </div>,
+      document.getElementById('root')
+    );
+
+
+
+class Timer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { seconds: 0 };
+  }
+
+  tick() {
+    this.setState(state => ({
+      seconds: state.seconds + 1
+    }));
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  render() {
+    return (
+      <div>
+        Seconds: {this.state.seconds}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Timer />,
+  document.getElementById('timer-example')
+);
+</script>
+ 
+<div id="app"> </div>
+<div id="container1"> </div>
+<div id="container2"> </div>
+<div id="container3"> </div>
+<div id="root"> </div>
+<div id="timer-example"> </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html> 
